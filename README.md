@@ -1,3 +1,3 @@
-# do-server
+# do
 
 write in rust.
