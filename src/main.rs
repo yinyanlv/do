@@ -1,20 +1,21 @@
 extern crate actix_web;
 
-use actix_web::{server, App, HttpRequest, Responder};
+use actix_web::{web, App, HttpRequest, HttpServer, Responder};
 
 fn main() {
-    server::new(|| {
+    HttpServer::new(|| {
         App::new()
-            .resource("/", |r| r.f(greet))
-            .resource("/{name}", |r| r.f(greet))
+            .route("/", web::get().to(greet))
+            .route("/{name}", web::get().to(greet))
     })
-        .bind("127.0.0.1:3200")
-        .expect("Can not bind to port 3200")
-        .run();
+    .bind("127.0.0.1:6000")
+    .expect("Can not bind to port 6000")
+    .run()
+    .unwrap();
 }
 
-fn greet(req: &HttpRequest) -> impl Responder {
+fn greet(req: HttpRequest) -> impl Responder {
     let name = req.match_info().get("name").unwrap_or("World");
 
-    format!("Hello {}", name)
+    format!("Hello {}!", name)
 }
