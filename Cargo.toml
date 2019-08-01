@@ -1,8 +1,9 @@
 [package]
-name = "do"
+name = "runner-server"
 version = "0.1.0"
-authors = ["yinyanlv <yanlv.yin@gmail.com>"]
+authors = ["bugong <1761869346@qq.com>"]
 edition = "2018"
 
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
 [dependencies]
-actix-web = "1.0.3"
