@@ -1,1 +1,3 @@
-pub(crate) static A: &'static str = "a";
+#[macro_use]
+extern crate diesel;
+extern crate dotenv;

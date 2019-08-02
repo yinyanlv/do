@@ -1,5 +1,7 @@
-## Get errors when install diesel_cli
+### win10安装diesel_cli报错
 ``` shell
-cargo install diesel_cli  // error, because has not install the client library for a database backend like postgres, sqlite on my operation system
+# 报错，因为操作系统上没安装用于postgres、sqlite后台的客户端库
+cargo install diesel_cli  
+# 正确
 cargo install diesel_cli --no-default-features --features mysql  
 ```
